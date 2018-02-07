@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- fichier xml représentant les modalitées de contrôle des connaissances -->
+
+<!DOCTYPE module [
+
+<!ELEMENT module (session1, (cc_session1? , ct_session1?), (session2, (cc_session2? ,  ct_session2? ))?, validation)>
+
+<!ELEMENT session1 (moyenne | pourcentage)>
+<!ELEMENT cc_session1 (moyenne | pourcentage)>
+<!ELEMENT ct_session1 (moyenne | pourcentage)>
+<!ELEMENT session2 (moyenne | pourcentage)>
+<!ELEMENT cc_session2 (moyenne | pourcentage)>
+<!ELEMENT ct_session2 (moyenne | pourcentage)>
+<!ELEMENT moyenne (ds*,moyenne*,pourcentage*)>
+<!ELEMENT pourcentage (ds*,moyenne*, pourcentage*)>
+<!ELEMENT ds (#PCDATA)>
+<!ELEMENT validation (#PCDATA)>
+
+<!ATTLIST moyenne nb_meilleur CDATA #REQUIRED> 
+<!ATTLIST moyenne p CDATA #IMPLIED>
+<!ATTLIST pourcentage p CDATA #IMPLIED> 
+<!ATTLIST ds p CDATA #IMPLIED>
+
+<!ATTLIST session1 link ID #REQUIRED>
+<!ATTLIST cc_session1 link ID  #REQUIRED >
+<!ATTLIST ct_session1 link ID  #REQUIRED >
+<!ATTLIST cc_session2 link ID  #REQUIRED >
+<!ATTLIST ct_session2 link ID  #REQUIRED >
+<!ATTLIST ds link IDREF #IMPLIED>
+
+<!ATTLIST ds type CDATA #REQUIRED> 
+]>
+
+
+<module>
+
+
+	<session1 link="a">
+		<moyenne  nb_meilleur="1">
+			<ds link="b">CT</ds>
+			<moyenne nb_meilleur="2">
+				<ds link="c">CC</ds>
+				<ds link="b">CT</ds>
+			</moyenne>
+		</moyenne>
+	</session1>
+
+
+	
+
+
+	<cc_session1 link="c">
+		<pourcentage>
+			<moyenne p="40" nb_meilleur="2">
+				<ds type="DM" >DS1</ds>
+				<ds>DS2</ds>
+				<ds>DS3</ds>
+			</moyenne>
+
+			<moyenne p="60" nb_meilleur="1">
+				<ds>DS4</ds>
+				<ds>DS5</ds>
+			</moyenne>
+		</pourcentage>
+	</cc_session1>
+
+
+	<ct_session1 link="b">
+		<moyenne nb_meilleur="2">
+			<ds>Epreuve1</ds>
+			<ds>Epreuve2</ds>
+		</moyenne>
+	</ct_session1>
+
+	<session2>
+		<pourcentage>
+			<ds link="a" p="40">1er session</ds>
+			<ds p="60" link="d">CT2</ds>
+		</pourcentage>
+	</session2>
+	
+	<ct_session2 link="d">
+		<moyenne nb_meilleur="2">
+			<ds>Epreuve1</ds>
+			<ds>Epreuve2</ds>
+		</moyenne>
+	</ct_session2>
+
+	<validation>10</validation>
+
+</module>

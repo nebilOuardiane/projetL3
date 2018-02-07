@@ -1,0 +1,20 @@
+	function showResult(xml) {
+		var txt = "";
+		path = "/listType/typeName";
+		if (xml.evaluate) {
+			var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+			var result = nodes.iterateNext();
+			while (result) {
+				txt += "<option>"+result.childNodes[0].nodeValue + "</option>";
+				result = nodes.iterateNext();
+			} 
+		// Code For Internet Explorer
+		} else if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
+			xml.setProperty("SelectionLanguage", "XPath");
+			nodes = xml.selectNodes(path);
+			for (i = 0; i < nodes.length; i++) {
+				txt += "<option>"+nodes[i].childNodes[0].nodeValue + "</option>";
+			}
+		}
+		alert( txt);
+	}

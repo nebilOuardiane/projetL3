@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>CTU MCC</title>
+
+		<!-- jquerry -->
+    	<script type="text/javascript" src="../js/jquery-3.2.1.min.js" charset="utf-8"> </script>
+    	  <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+
+
+    	<!-- bootstrap -->
+    	<link href="../css/bootstrap.min.css" rel="stylesheet">
+    	<script src="../js/bootstrap.min.js"></script>
+		<!--<link href="css/Noramlize.css" rel="stylesheet"/>-->
+
+    	<!-- scripts -->
+    	<script type="text/javascript" src="../js/variables.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/autre.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/fil_variables.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/xslt.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/etapes.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/moteur_formulaire.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/xml.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/initialize_from_html.js" charset="utf-8"> </script>
+		
+
+
+		<!-- style -->
+		<link rel="stylesheet" type="text/css" href="../css/test.css"/>
+		<link rel="stylesheet" type="text/css" href="../test_tree.css"/>
+		  
+		<!-- icone -->
+		<link rel="shortcut icon" href="../img/ctu.png"/>
+		<script>
+			$(document).ready(function(){
+				
+
+				var xml='<?xml version="1.0" encoding="UTF-8" ?><module><session1 link="a"><moyenne nb_meilleur="1"><ds link="c">Contrôle Continu</ds></moyenne></session1><session2><pourcentage><ds p="40" link="a">S1</ds><ds p="60" link="d">CT_S2</ds></pourcentage></session2><cc_session1 link="c"><moyenne nb_meilleur="2"><moyenne  nb_meilleur="1"><ds type="DS">DS1</ds><ds type="DM">DS2</ds></moyenne><moyenne  nb_meilleur="2"><ds type="DM">DS2</ds><ds type="projet">DS3</ds></moyenne><pourcentage><ds p="40" type="DS">DS1</ds><ds p="60" type="projet">DS3</ds></pourcentage><ds  type="DS">DS1</ds></moyenne></cc_session1><cc_session2 link="e"><moyenne nb_meilleur="1"><ds type="DS">DS1</ds></moyenne></cc_session2><ct_session1 link="b"><moyenne nb_meilleur="1"><ds type="DS">DS1</ds></moyenne></ct_session1><ct_session2 link="d"><moyenne nb_meilleur="1"><ds type="DS">DS1</ds></moyenne></ct_session2><validation>10</validation></module>';
+				// var xml='<?xml version="1.0" encoding="UTF-8" ?><module><session1 link="a"><moyenne nb_meilleur="1"><ds link="c">Contrôle Continu</ds></moyenne></session1><session2><pourcentage><ds p="40" link="a">S1</ds><ds p="60" link="d">CT_S2</ds></pourcentage></session2><cc_session1 link="c"><moyenne nb_meilleur="2"><moyenne  nb_meilleur="1"><ds type="DS">DS1</ds><ds type="DM">DS2</ds></moyenne><moyenne  nb_meilleur="2"><ds type="DM">DS2</ds><ds type="projet">DS3</ds></moyenne><pourcentage><ds p="40" type="DS">DS1</ds><ds p="60" type="projet">DS3</ds></pourcentage>><ds  type="DS">DS1</ds></moyenne></cc_session1><cc_session2 link="e"><moyenne nb_meilleur="1"><ds type="DS">DS1</ds></moyenne></cc_session2><ct_session2 link="d"><moyenne nb_meilleur="1"><ds type="DS">DS1</ds></moyenne></ct_session2><validation>10</validation></module>';
+
+				transform_with_xslt(xml , "../xml_to_html.xsl" , "weshwesh") ;
+				initialize_from_html() ;
+			});
+		</script>
+
+		<script type="text/javascript" src="../js/test.js" charset="utf-8"> </script>
+
+		<style>
+			section {
+				display: block ;
+			}
+		</style>
+		
+	</head>
+	<body>
+			<nav >
+		    <div class="nav_row">
+		        <div class="nav_step active" id="nav_1">
+		            <button type="button" id="btn_nav_1" class="btn  btn-circle"><span class="glyphicon glyphicon-pencil"></span></button>
+		            <p>Nombre Session</p>
+		        </div>
+		        <div class="nav_step " id="nav_2">
+		            <button type="button" id="btn_nav_2" class="btn  btn-circle"><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Session 1</p>
+		        </div>
+		        <div class="nav_step" id="nav_3">
+		            <button type="button" id="btn_nav_3" class="btn  btn-circle"><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail CC1</p>
+		        </div>
+		        <div class="nav_step" id="nav_4">
+		            <button type="button" id="btn_nav_4" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail CT1</p>
+		        </div> 
+		        <div class="nav_step" id="nav_5">
+		            <button type="button" id="btn_nav_5" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail Session 1</p>
+		        </div> 
+		         <div class="nav_step" id="nav_6">
+		            <button type="button" id="btn_nav_6" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Session 2</p>
+		        </div> 
+		         <div class="nav_step" id="nav_7">
+		            <button type="button" id="btn_nav_7" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail CC2</p>
+		        </div> 
+		         <div class="nav_step" id="nav_8">
+		            <button type="button" id="btn_nav_8" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail CT2</p>
+		        </div> 
+		         <div class="nav_step" id="nav_9">
+		            <button type="button" id="btn_nav_9" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail Session 2</p>
+		        </div> 
+		         <div class="nav_step" id="nav_10">
+		            <button type="button" id="btn_nav_10" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Validation module</p>
+		        </div> 
+		         <div class="nav_step" id="nav_11">
+		            <button type="button" id="btn_nav_11" class="btn  btn-circle" ><span class="glyphicon glyphicon-ok"></span></button>
+		            <p>Recapitulatif</p>
+		        </div> 
+
+		    </div>
+		</nav>
+
+		   
+
+<!--########################################################################-->
+	    <section id="etape1" >
+
+	    	<h1 class="text-center">Combien de session ?</h1>
+
+	    	<div>
+		    	<input class="btn btn-valider btn-lg" type="button" value="1 session" id="1boutton1"/>
+				<input class="btn btn-valider btn-lg" type="button" value="2 sessions" id="1boutton2"/>
+			</div>
+
+	    </section>
+
+
+		 <div id="weshwesh">
+		</div>
+
+
+	   	<section id="etape11">
+	    	
+	    	<h1 class="text-center">Récapitulatif</h1>
+
+	    	<div id="exemple"></div>
+	    	
+	    	<br/>
+
+	    	<div id="texte"></div>
+
+	    </section>
+	</body>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.parseXML demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<p id="someElement"></p>
+<p id="anotherElement"></p>
+
+<div id="example"></div>
+ 
+<script>
+// var xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>";
+var xml='<?xml version="1.0" encoding="UTF-8"?><catalog><cd><title>Empire Burlesque</title><artist>Bob Dylan</artist><country>USA</country><company>Columbia</company><price>10.90</price><year>1985</year></cd><cd><title>Hide your heart</title><artist>Bonnie Tyler</artist><country>UK</country><company>CBS Records</company><price>9.90</price><year>1988</year></cd></catalog>';
+// var xmlDoc = $.parseXML( xml );
+// var $xml = $(xmlDoc );
+// var $title = $xml.find( "title" );
+
+// var xsl = '<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"><xsl:template match="/"><html><body><h2>My CD Collection</h2></body></html></xsl:template></xsl:stylesheet>' ;
+// var xsl = '<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"><xsl:template match="/"><html><body><h2>My CD Collection</h2><table border="1"><tr bgcolor="#9acd32"><th style="text-align:left">Title</th><th style="text-align:left">Artist</th></tr><xsl:for-each select="catalog/cd"><tr><td><xsl:value-of select="title"/></td><td><xsl:value-of select="artist"/></td></tr></xsl:for-each></table></body></html></xsl:template></xsl:stylesheet>' ;
+// var xslDoc = $.parseXML(xsl);
+
+// var xslDoc = loadXMLDoc("xsl.xml");
+
+transform_with_xslt(xml , "xsl.xml" , "example") ;
+
+
+
+
+
+
+  function loadXMLDoc(filename){
+		if (window.ActiveXObject){
+		  xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		else {
+		  xhttp = new XMLHttpRequest();
+		}
+		xhttp.open("GET", filename, false);
+		try {xhttp.responseType = "msxml-document"} catch(err) {} // Helping IE11
+		xhttp.send("");
+		return xhttp.responseXML;
+	}
+
+	function transform_with_xslt (xml_string , xsl_file , id_to_place){
+		var xmlDoc = $.parseXML( xml_string );
+		var xslDoc = loadXMLDoc(xsl_file);
+
+		//pour iternet Explorer
+		if (window.ActiveXObject || xhttp.responseType == "msxml-document"){
+		  ex = xmlDoc.transformNode(xslDoc);
+		  document.getElementById("example").innerHTML = ex;
+		}
+		// code for Chrome, Firefox, Opera, etc.
+		else if (document.implementation && document.implementation.createDocument){
+		  xsltProcessor = new XSLTProcessor();
+		  xsltProcessor.importStylesheet(xslDoc);
+		  resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
+		  document.getElementById(id_to_place).appendChild(resultDocument);
+		}
+
+	}
+
+
+</script>
+ 
+</body>
+</html>

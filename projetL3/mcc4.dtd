@@ -1,0 +1,28 @@
+<!-- Ce fichier est la dtd du fichier mcc4.xml -->
+<!DOCTYPE module{
+
+
+<!ELEMENT module (session1, (cc_session1 | ct_session1 | (cc_session1, ct_session1)),(session2, (cc_session2 | ct_session2 | (cc_session2, ct_session2)))? )>
+<!ELEMENT session1 (moyenne | pourcentage)>
+<!ELEMENT cc_session1 (moyenne | pourcentage)>
+<!ELEMENT ct_session1 (moyenne | pourcentage)>
+<!ELEMENT session2 (moyenne | pourcentage)>
+<!ELEMENT cc_session2 (moyenne | pourcentage)>
+<!ELEMENT ct_session2 (moyenne | pourcentage)>
+<!ELEMENT moyenne (ds*,moyenne*,pourcentage*)>
+<!ELEMENT pourcentage (ds*,moyenne*, pourcentage*)>
+<!ELEMENT ds (#PCDATA)>
+
+<!ATTLIST moyenne nb_meilleur CDATA #REQUIRED> 
+<!ATTLIST moyenne p CDATA #IMPLIED>
+<!ATTLIST pourcentage p CDATA #IMPLIED> 
+<!ATTLIST ds p CDATA #IMPLIED>
+
+<!ATTLIST session1 link ID #FIXED 1>
+<!ATTLIST cc_session1 link ID #FIXED 3>
+<!ATTLIST ct_session1 link ID #FIXED 2>
+<!ATTLIST cc_session2 link ID #FIXED 5>
+<!ATTLIST ct_session2 link ID #FIXED 4>
+<!ATTLIST ds link IDREF #IMPLIED>
+
+}

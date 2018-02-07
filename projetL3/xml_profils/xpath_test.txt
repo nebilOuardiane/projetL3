@@ -1,0 +1,27 @@
+xpath count(distinct-values(/module/cc_session1//ds))
+
+
+
+
+/module/cc_session1//ds[]
+
+cat (/module/cc_session1//ds)[1]/following::ds
+tout les ds suivant jusqu'a la fin du document
+
+
+
+cat (/module/cc_session1//ds)[1]/following-sibling::ds
+touts les ds qui suivent et qui sont frère direct
+
+cat (/module/cc_session1//ds)[1]/following::ds[count(ancestor::cc_session1) = 1]
+touts les ds qui suivent et qui ont le même ancetre(cc_session1)
+
+#############################################################################
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+yes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+xpath count(/module/cc_session1//ds[not(following::ds[count(ancestor::cc_session1) = 1]/. = .)])
+
+xpath count(/module/cc_session1//ds[not(preceding::ds[count(ancestor::cc_session1) = 1]/. = .)])

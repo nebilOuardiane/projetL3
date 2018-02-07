@@ -1,0 +1,89 @@
+mardi 14novembre : 
+3h - dessin du site sur parpier 
+
+total-semaine : 3h
+-----------------------------------------------------------------------
+
+21 & 23novembre
+5h - mockup du site sur balsamiq
+
+total-semaine : 5h
+----------------------------------------------------------------------
+27 novembre
+2h - fichier xml
+
+total-semaine : 2h
+----------------------------------------------------------------------
+6 decembre
+6h - dtd +debut html js
+
+total-semaine : 6h
+--------------------------------------------------------------------------
+mardi 19: 
+6h matin dtd - html javascript
+
+mercredi 20:
+6h - html javasctipt
+
+jeudi 21 :
+4h - css
+
+total-semaine : 16h
+----------------------------------------------------------------------------
+lundi 08 janvier : 
+2h45 html javadcript -function
+
+mardi 9janvier:
+2h30 html javascript fonction
+
+mercredi 10 janvier : 
+2h45 html javascript
+
+jeudi 11 janvier : 
+4h30 barre de nav + css
+
+total-semaine : 12.5h
+--------------------------------------------------------------------------
+lundi 15 janvier:
+4h - correction de "bugs" stockage du contenu du formaulaire début de remplissage de la variable du fichier xml
+
+mardi 16 janvier : 
+3h - creation du fichier xml
+
+jeudi 18 janvier : 
+6h -faire un fichier de config pour les type ds + essayer de parser le xml avec xpath(sans succès)
+
+total-semaine : 13h
+
+----------------------------------------------------------------------------
+
+lundi 22 janvier : 
+3h - fonction pour transformer xml en html avec xslt
+
+mardi 23 janvier : 
+2h30 - arbres
+
+mercredi 24 janvier : 
+1h30 - arbres
+
+jeudi 25 janvier : 
+8h - génération des arbres avec xslt
+
+total-semaine : 15h
+-------------------------------------------------------------------------
+lundi 29 janvier : 
+3h - finition arbres + début de la génération de texte
+
+mardi 30 janvier : 
+1h30 - fonction qui rempli les varaibles à partir du html + génération de texte(suite)
+
+merdredi 31 janvier :
+ 2h15 - rempli les varaibes à partir du contenu html + debut(xml -> html avec xslt)
+
+
+total-semaine : 
+------------------------------------------------------------
+
+total
+48h30min
+

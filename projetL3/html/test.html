@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>CTU MCC</title>
+
+		<!-- jquerry -->
+    	<script type="text/javascript" src="../js/jquery-3.2.1.min.js" charset="utf-8"> </script>
+    	  <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+
+
+    	<!-- bootstrap -->
+    	<link href="../css/bootstrap.min.css" rel="stylesheet">
+    	<script src="../js/bootstrap.min.js"></script>
+		<!--<link href="css/Noramlize.css" rel="stylesheet"/>-->
+
+    	<!-- scripts -->
+    	<script type="text/javascript" src="../js/variables.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/autre.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/fil_variables.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/xslt.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/etapes.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/moteur_formulaire.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/xml.js" charset="utf-8"> </script>
+    	<script type="text/javascript" src="../js/initialize_from_html.js" charset="utf-8"> </script>
+		<script type="text/javascript" src="../js/test.js" charset="utf-8"> </script>
+
+
+		<!-- style -->
+		<link rel="stylesheet" type="text/css" href="../css/test.css"/>
+		<link rel="stylesheet" type="text/css" href="../test_tree.css"/>
+		  
+		<!-- icone -->
+		<link rel="shortcut icon" href="../img/ctu.png"/>
+		
+	</head>
+	<body >
+	
+		<nav >
+		    <div class="nav_row">
+		        <div class="nav_step active" id="nav_1">
+		            <button type="button" id="btn_nav_1" class="btn  btn-circle"><span class="glyphicon glyphicon-pencil"></span></button>
+		            <p>Nombre Session</p>
+		        </div>
+		        <div class="nav_step " id="nav_2">
+		            <button type="button" id="btn_nav_2" class="btn  btn-circle"><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Session 1</p>
+		        </div>
+		        <div class="nav_step" id="nav_3">
+		            <button type="button" id="btn_nav_3" class="btn  btn-circle"><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail CC1</p>
+		        </div>
+		        <div class="nav_step" id="nav_4">
+		            <button type="button" id="btn_nav_4" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail CT1</p>
+		        </div> 
+		        <div class="nav_step" id="nav_5">
+		            <button type="button" id="btn_nav_5" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail Session 1</p>
+		        </div> 
+		         <div class="nav_step" id="nav_6">
+		            <button type="button" id="btn_nav_6" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Session 2</p>
+		        </div> 
+		         <div class="nav_step" id="nav_7">
+		            <button type="button" id="btn_nav_7" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail CC2</p>
+		        </div> 
+		         <div class="nav_step" id="nav_8">
+		            <button type="button" id="btn_nav_8" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail CT2</p>
+		        </div> 
+		         <div class="nav_step" id="nav_9">
+		            <button type="button" id="btn_nav_9" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Detail Session 2</p>
+		        </div> 
+		         <div class="nav_step" id="nav_10">
+		            <button type="button" id="btn_nav_10" class="btn  btn-circle" ><span class="glyphicon glyphicon-star-empty"></span></button>
+		            <p>Validation module</p>
+		        </div> 
+		         <div class="nav_step" id="nav_11">
+		            <button type="button" id="btn_nav_11" class="btn  btn-circle" ><span class="glyphicon glyphicon-ok"></span></button>
+		            <p>Recapitulatif</p>
+		        </div> 
+
+		    </div>
+		</nav>
+
+		   
+
+<!--########################################################################-->
+	    <section id="etape1" >
+
+	    	<h1 class="text-center">Combien de session ?</h1>
+
+	    	<div>
+		    	<input class="btn btn-valider btn-lg" type="button" value="1 session" id="1boutton1"/>
+				<input class="btn btn-valider btn-lg" type="button" value="2 sessions" id="1boutton2"/>
+			</div>
+
+	    </section>
+
+
+	 <div id="weshwesh">
+
+<!--########################################################################-->
+
+	    <section id="etape2">
+	    	
+	    		<h1 class="text-center">1ère Session</h1>
+
+	    		<div>
+
+		    		<p class="error" id="e2_error1">Erreur : Contrôle continue et contrôle terminal ne peuvent être les deux à "non".</p>	
+
+
+		    		<table>
+		    			<thead>
+		    				<tr>
+		    					<td></td>
+		    					<td>Oui</td>
+		    					<td>Non</td>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+			    			<tr>
+			    				<td><label for="radioCC1"> Contrôle continue </label></td>
+					    		<td><input type="radio" value="yes" id="radioCC1_y" name="CC1" checked></td>
+					    		<td><input type="radio" value="no" id="radioCC1_n" name="CC1"></td>
+					    	</tr>
+
+				    		
+				    		<tr>
+					    		<td><label for="radioCT1"> Contrôle terminal </label></td>
+					    		<td><input type="radio" value="yes" id="radioCT1_y" name="CT1" checked></td>
+					    		<td><input type="radio" value="no" id="radioCT1_n" name="CT1"></td>
+					    	</tr>
+					    </tbody>	
+		    		</table>
+		    	</div>
+
+	    		<input class="pull-right btn btn-valider btn-lg" type="button" value="Valider" id="2boutonValider">
+
+	    </section>
+
+<!--########################################################################-->
+
+	    <section  id="etape3">
+	    	
+	    	<h1 class="text-center" >Détail du contrôle continue S1</h1>
+
+	    	<div >
+		    	<p class="error" id="e3_error1"></p>
+				
+				<table >
+					<tr>
+						<td>nombre de DS</td>
+						<td><input id="e3_nbDS" type="number" value="1" min="1" max="20"/></td>
+					</tr>
+				</table>
+				
+				<table  class="tableDS" id="e3_tableDS" >
+			    			<tr  id="e3_DS1">
+			    				<td >
+			    					<input type="button" id="e3_btn_DS1" value="DS1" class="dsButton clickableCC1"/>
+			    				</td>
+					    		<td>
+									<select class="typeDs" name="nomDS" size="1" >
+										
+										
+									</select>
+								</td>
+					    	</tr>    		
+				</table>
+
+				<table class="tableGroupe" id="e3_tableGroupe">
+				</table>
+			
+			
+				<table class="table_new_groupe" id="e3_table_new_groupe">
+					<tr>
+						<td>Créer un groupe</td>
+						<td id="e3_numGroupe">G1</td>
+						<td id="e3_groupeCreationDisplay"></td>
+						<td><input type="button" id="e3_btn_Annuler" value="Annuler"/></td>
+						<td><input type="button" id="e3_btn_Creer" value="Créer"/></td>
+						
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>total</td>
+						<td>
+							<select  id="e3_select" name="totalSelect" size="1" disabled="">
+								<option id="e3_SelectInitial">Vous devez créer un groupe</option>
+
+							</select>
+						
+						</td>
+
+						
+					</tr>
+				</table>
+
+			</div>
+			
+		
+			<input class="pull-right btn btn-valider btn-lg"  type="button" value="Valider" id="e3_btn_Valider" disabled>
+
+
+			
+		</section>
+
+<!--########################################################################-->
+		
+	    <section id="etape4">
+	    	
+	    	<h1 class="text-center" >Détail du contrôle terminal S1</h1>
+
+	    	<div >
+		    	<p class="error" id="e4_error1"></p>
+				
+				<table >
+					<tr>
+						<td>Nombre d'épreuve(s)</td>
+						<td><input id="e4_nbDS" type="number" value="1" min="1" max="20"/></td>
+					</tr>
+				</table>
+				
+				<table  class="tableDS" id="e4_tableDS" >
+			    			<tr  id="e4_DS1">
+			    				<td >
+			    					<input type="button" id="e4_btn_DS1" value="DS1" class="dsButton clickableCC1"/>
+			    				</td>
+					    		<td>
+									<select class="typeDs" name="nomDS" size="1" >
+										
+									</select>
+								</td>
+					    	</tr>    		
+				</table>
+
+				<table class="tableGroupe" id="e4_tableGroupe">
+				</table>
+			
+			
+				<table  class="table_new_groupe" id="e4_table_new_groupe">
+					<tr>
+						<td>Créer un groupe</td>
+						<td id="e4_numGroupe">G1</td>
+						<td id="e4_groupeCreationDisplay"></td>
+						<td><input type="button" id="e4_btn_Annuler" value="Annuler"/></td>
+						<td><input type="button" id="e4_btn_Creer" value="Créer"/></td>
+						
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>total</td>
+						<td>
+							<select  id="e4_select" name="totalSelect" size="1" disabled>
+								<option id="e4_SelectInitial">Vous devez créer un groupe</option>
+
+							</select>
+						
+						</td>
+
+						
+					</tr>
+				</table>
+
+			</div>
+			
+		
+			<input class="pull-right btn btn-valider btn-lg"  type="button" value="Valider" id="e4_btn_Valider" disabled>
+	    	
+
+	    </section>
+
+<!--########################################################################-->
+	    <section id="etape5">
+	    	
+	<h1 class="text-center" >Détail de la première session</h1>
+
+	    	<div >
+		    	<p class="error" id="e5_error1"></p>
+				
+				<table >
+					<tr>
+						<td><input type="button" id="e5_btn_CC1" value="Contrôle Continu" class="dsButton clickableCC1"/></td>
+			    		<td><input type="button" id="e5_btn_CT1" value="Contrôle Terminal" class="dsButton clickableCC1"/></td>
+
+					</tr>
+				</table>
+				
+
+				<table class="tableGroupe" id="e5_tableGroupe">
+				</table>
+			
+			
+				<table  class="table_new_groupe" id="e5_table_new_groupe">
+					<tr>
+						<td>Créer un groupe</td>
+						<td id="e5_numGroupe">G1</td>
+						<td id="e5_groupeCreationDisplay"></td>
+						<td><input type="button" id="e5_btn_Annuler" value="Annuler"/></td>
+						<td><input type="button" id="e5_btn_Creer" value="Créer"/></td>
+						
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>total</td>
+						<td>
+							<select  id="e5_select" name="totalSelect" size="1" disabled>
+								<option id="e5_SelectInitial">Vous devez créer un groupe</option>
+
+							</select>
+						
+						</td>
+
+						
+					</tr>
+				</table>
+
+			</div>
+			
+		
+			<input class="pull-right btn btn-valider btn-lg"  type="button" value="Valider" id="e5_btn_Valider" disabled>
+	    	
+	    </section>
+
+<!--########################################################################-->
+
+	    <section id="etape6">
+	    	
+	    	<h1 class="text-center">Session 2</h1>
+
+	    	<div>
+
+		    		<p class="error" id="e6_error1">Erreur : Contrôle continue et contrôle terminal ne peuvent être les deux à "non".</p>	
+
+
+		    		<table>
+		    			<thead>
+		    				<tr>
+		    					<td></td>
+		    					<td>Oui</td>
+		    					<td>Non</td>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+			    			<tr>
+			    				<td><label for="radioCC2"> Contrôle continue </label></td>
+					    		<td><input type="radio" value="yes" id="radioCC2_y" name="CC2" checked></td>
+					    		<td><input type="radio" value="no" id="radioCC2_n" name="CC2"></td>
+					    	</tr>
+
+				    		
+				    		<tr>
+					    		<td><label for="radioCT2"> Contrôle terminal </label></td>
+					    		<td><input type="radio" value="yes" id="radioCT2_y" name="CT2" checked></td>
+					    		<td><input type="radio" value="no" id="radioCT2_n" name="CT2"></td>
+					    	</tr>
+					    </tbody>	
+		    		</table>
+		    	</div>
+
+	    		<input class="pull-right btn btn-valider btn-lg" type="button" value="Valider" id="6boutonValider">
+
+	    </section>
+
+<!--########################################################################-->
+
+	    <section id="etape7">
+	    	
+	    	<h1 class="text-center">Détail du contrôle continue S2</h1>
+
+
+	    	<div >
+		    	<p class="error" id="e7_error1"></p>
+				
+				<table >
+					<tr>
+						<td>nombre de DS</td>
+						<td><input id="e7_nbDS" type="number" value="1" min="1" max="20"/></td>
+					</tr>
+				</table>
+				
+				<table  class="tableDS" id="e7_tableDS" >
+			    			<tr  id="e7_DS1">
+			    				<td >
+			    					<input type="button" id="e7_btn_DS1" value="DS1" class="dsButton clickableCC1"/>
+			    				</td>
+					    		<td>
+									<select class="typeDs"  name="nomDS" size="1" >
+										
+									</select>
+								</td>
+					    	</tr>    		
+				</table>
+
+				<table class="tableGroupe" id="e7_tableGroupe">
+				</table>
+			
+			
+				<table  class="table_new_groupe" id="e7_table_new_groupe">
+					<tr>
+						<td>Créer un groupe</td>
+						<td id="e7_numGroupe">G1</td>
+						<td id="e7_groupeCreationDisplay"></td>
+						<td><input type="button" id="e7_btn_Annuler" value="Annuler"/></td>
+						<td><input type="button" id="e7_btn_Creer" value="Créer"/></td>
+						
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>total</td>
+						<td>
+							<select  id="e7_select" name="totalSelect" size="1" disabled>
+								<option id="e7_SelectInitial">Vous devez créer un groupe</option>
+
+							</select>
+						
+						</td>
+
+						
+					</tr>
+				</table>
+
+			</div>
+			
+		
+			<input class="pull-right btn btn-valider btn-lg"  type="button" value="Valider" id="e7_btn_Valider" disabled>
+
+
+	    </section>
+
+<!--########################################################################-->
+
+	    <section id="etape8">
+	    	
+	    	<h1 class="text-center">Détail du contrôle terminal S2</h1>
+
+	    	<div >
+		    	<p class="error" id="e8_error1"></p>
+				
+				<table >
+					<tr>
+						<td>Nombre d'épreuve(s)</td>
+						<td><input id="e8_nbDS" type="number" value="1" min="1" max="20"/></td>
+					</tr>
+				</table>
+				
+				<table  class="tableDS" id="e8_tableDS" >
+			    			<tr  id="e8_DS1">
+			    				<td >
+			    					<input type="button" id="e8_btn_DS1" value="DS1" class="dsButton clickableCC1"/>
+			    				</td>
+					    		<td>
+									<select class="typeDs"  name="nomDS" size="1" >
+										
+									</select>
+								</td>
+					    	</tr>    		
+				</table>
+
+				<table class="tableGroupe" id="e8_tableGroupe">
+				</table>
+			
+			
+				<table  class="table_new_groupe" id="e8_table_new_groupe">
+					<tr>
+						<td>Créer un groupe</td>
+						<td id="e8_numGroupe">G1</td>
+						<td id="e8_groupeCreationDisplay"></td>
+						<td><input type="button" id="e8_btn_Annuler" value="Annuler"/></td>
+						<td><input type="button" id="e8_btn_Creer" value="Créer"/></td>
+						
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>total</td>
+						<td>
+							<select  id="e8_select" name="totalSelect" size="1" disabled>
+								<option id="e8_SelectInitial">Vous devez créer un groupe</option>
+
+							</select>
+						
+						</td>
+
+						
+					</tr>
+				</table>
+
+			</div>
+			
+		
+			<input class="pull-right btn btn-valider btn-lg"  type="button" value="Valider" id="e8_btn_Valider" disabled>
+
+	    </section>
+
+<!--########################################################################-->
+
+	    <section id="etape9">
+	    	
+	    	<h1 class="text-center">Détail de la Session 2</h1>
+
+	    	<div >
+		    	<p class="error" id="e9_error1"></p>
+				
+				<table id="e9_table_btn" >
+					<tr>
+						<!--<td><input type="button" id="e9_btn_CC1" value="Contrôle Continu" class="dsButton clickableCC1"/></td>
+			    		<td><input type="button" id="e9_btn_CT1" value="Contrôle Terminal" class="dsButton clickableCC1"/></td>-->
+			    		<td id="e9_td_S1"><input type="button" id="e9_btn_S1" value="S1" class="dsButton clickableCC1"/></td>
+
+					</tr>
+				</table>
+				
+
+				<table class="tableGroupe" id="e9_tableGroupe">
+				</table>
+			
+			
+				<table  class="table_new_groupe" id="e9_table_new_groupe">
+					<tr>
+						<td>Créer un groupe</td>
+						<td id="e9_numGroupe">G1</td>
+						<td id="e9_groupeCreationDisplay"></td>
+						<td><input type="button" id="e9_btn_Annuler" value="Annuler"/></td>
+						<td><input type="button" id="e9_btn_Creer" value="Créer"/></td>
+						
+					</tr>
+				</table>
+				
+				<table>
+					<tr>
+						<td>total</td>
+						<td>
+							<select  id="e9_select" name="totalSelect" size="1" disabled>
+								<option id="e9_SelectInitial">Vous devez créer un groupe</option>
+
+							</select>
+						
+						</td>
+
+						
+					</tr>
+				</table>
+
+			</div>
+			
+		
+			<input class="pull-right btn  btn-valider btn-lg"  type="button" value="Valider" id="e9_btn_Valider" disabled>
+	    	
+
+	    	
+	    </section>
+
+<!--########################################################################-->
+
+	    <section id="etape10">
+	    	
+	    	<h1 class="text-center">Validation du module</h1>
+
+	    	<div>
+	    		<p class="error" id="e10_error1">Erreur : La note renseignée doit être entre 0 et 20</p>
+
+	    		<table>
+	    			<tr>
+				    	<td><p>Passe en deuxieme session si note strictement inférieur à </p></td>
+				    	<td><input type="number" value="10" min="0" max="20" id="e10_note_session2"></td>
+				    </tr>
+			    </table>
+
+
+				<input class="pull-right btn btn-valider btn-lg"  type="button" value="Valider" id="e10_btn_Valider" >
+			</div>
+	    </section>
+
+<!--########################################################################-->
+
+	<!-- finc tu div weshwesh  -->
+	</div> 
+   	
+	   	<section id="etape11">
+	    	
+	    	<h1 class="text-center">Récapitulatif</h1>
+
+	    	<div id="exemple"></div>
+	    	
+	    	<br/>
+
+	    	<div id="texte"></div>
+
+	    </section>
+
+
+
+ 
+	</body>
+</html>
+
+
+

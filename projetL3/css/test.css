@@ -1,0 +1,248 @@
+/*-----------------------------------------------
+        nav
+----------------------------------------------*/
+
+body{
+    margin: 20px 40px;
+}
+
+nav .nav_step p {
+    margin-top: 2vh;
+    /*font-size : 2vh;   */ 
+    font-size :  1vw;
+}
+
+nav .nav_row {
+    display: table-row;
+}
+
+nav {
+    display: table;     
+    width: 100%;
+    position: relative;
+}
+
+/*les boutons qui sont marqué comme disabled*/
+nav .nav_step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+/* la ligne qui connecte touts les traits*/
+nav .nav_row:before {
+    top: 3vw;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    /*background-color: #ccc;*/
+    background-color : #34373a;
+    z-order: 0;
+    
+}
+
+nav .nav_step {    
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+nav .btn-circle {
+  width: 4vw;
+  height: 4vw;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 2vw;
+  line-height: 1.428571429;
+  border-radius: 100%;
+  border-color: #34373a;
+}
+
+nav div div button {
+    background-color : #34373a ; 
+    color : #a5a5a5;
+}
+/*
+nav div div button:focus {
+    background-color : #34373a ; 
+    color : #a5a5a5;
+    border-radius : 100%;
+}*/
+
+nav div div button:hover {
+    background-color :  #34373a ;
+    border-color: #34373a;
+    color : white !important;
+}
+
+nav div .active button {
+    background-color: #71cf53;
+    width: 6vw;
+    height: 6vw;
+    color : #34373a ;
+    border-width : 2px ;
+
+}
+
+nav div .active button:hover {
+    background-color: #71cf53;
+    color : #34373a !important;
+}
+
+/* 
+    les p 
+*/
+
+/* tout les p*/
+nav .btn + p {
+    margin-left : auto;
+    margin-right : auto;
+}
+
+/*le p en dessous le bouton actif */
+nav div .active button + p {
+    font-size: 1.5vw;
+    width: 7vw;
+}
+
+/*les autres p*/
+nav div div button + p{
+    width : 5vw ;
+}
+
+
+
+/*-----------------------------------------------
+    le reste
+----------------------------------------------*/
+
+table td{
+    padding-right: 1vw;
+}
+
+section {
+    width: 55vw;
+    margin: 0 auto;
+}
+section > div {
+    margin-top: 5em;
+}
+input[value="Valider"]{
+    
+    margin-top : 3em;
+
+}
+
+section >div > table {
+    margin-bottom : 0.7em;
+}
+
+section >div > table > tr {
+    margin-bottom: 0.3em ;
+}
+
+/*
+section >div > #tableGroupeCC1 >tr > td:first-child , section >div > #tableDsCC1 tr > td:first-child  {
+    width : 4em; ;
+}
+
+section >div > #tableGroupeCC1 >tr > td:first-child > input{
+    background-color : #ff581c; 
+}
+
+section >div > #tableDsCC1 tr > td:first-child > input{
+    background-color : #ffa01c ; 
+}
+
+section >div > #tableDsCC1 tr > td:first-child > input , section >div > #tableGroupeCC1 >tr > td:first-child > input {
+    border-color : black;
+    border-width : 1px ; 
+    border-radius : 30% ;
+    color : black; 
+}
+*/
+
+#etape1 > div  {
+    text-align : center;
+}
+
+#etape1 > div >input:first-child {
+    margin-right: 2em ;
+}
+/*
+#tableDsCC1, #tableGroupeCC1 {
+    border-spacing: 5vh;
+}
+*/
+body{
+    background-color: white;
+}
+
+/*------------------------*/
+
+#etape2 table td , #etape9 #e9_table_btn td{
+    vertical-align: top ; 
+    padding : 1vw ;
+
+}
+
+#etape2 table tr , #etape9 #e9_table_btn tr{
+    margin-bottom: 1vw;
+
+}
+ #etape2, #etape9 {
+    border-collapse: collapse;
+}
+
+/*------------------------*/
+.error {
+    color : red; 
+    border : 1px solid red ;
+}
+/*------------------------*/
+
+
+#etape2 table {
+        vertical-align: top ; 
+    padding : 1vw ;
+
+}
+
+
+/*----------------------------*/
+/*       
+*/
+
+.table_new_groupe td:nth-child(3){
+    width : 15vw;
+    border : 1px solid black;
+    padding-right: 0 ;
+
+
+}
+.table_new_groupe td:nth-child(4){
+    padding-left: 1vw ;
+}
+
+/*bouton valider*/
+.btn-valider {
+    background-color: #34373a ;
+    color : white ; 
+}
+
+.btn-valider:hover {
+    background-color: #71cf53 ;
+}
+    
+#sectionCreerModele{
+
+    margin-top: 40vh;
+    text-align: center;
+
+}
+
+#boutonCreerModele{
+
+    margin-right: 17vw;
+}

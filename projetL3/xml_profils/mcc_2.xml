@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <session1 link="a">
+        <moyenne nb_meilleur="1">
+            <ds link="c">Contrôle Continu</ds>
+        </moyenne>
+    </session1>
+
+    <session2>
+        <pourcentage>
+            <ds p="40" link="a">S1</ds>
+            <ds p="60" link="d">CT_S2</ds>
+        </pourcentage>
+    </session2>
+
+    <cc_session1 link="c">
+        <moyenne nb_meilleur="2">
+            <moyenne  nb_meilleur="1">
+                <ds type="DS">DS1</ds>
+                <ds type="DS">DS2</ds>
+            </moyenne>
+            <moyenne  nb_meilleur="2">
+                <ds type="DS">DS2</ds>
+                <ds type="DS">DS3</ds>
+            </moyenne>
+             <pourcentage>
+                <ds p="40" type="DS">DS1</ds>
+                <ds p="60" type="DS">DS3</ds>
+            </pourcentage>>
+            <ds  type="DS">DS1</ds>
+        </moyenne>
+    </cc_session1>
+
+    <cc_session2 link="e">
+        <moyenne nb_meilleur="1">
+            <ds type="DS">DS1</ds>
+        </moyenne>
+    </cc_session2>
+
+    <ct_session1 link="b">
+        <moyenne nb_meilleur="1">
+            <ds type="DS">DS1</ds>
+        </moyenne>
+    </ct_session1>
+
+    <ct_session2 link="d">
+        <moyenne nb_meilleur="1">
+            <ds type="DS">DS1</ds>
+        </moyenne>
+    </ct_session2>
+
+    <validation>10</validation>
+</module>
